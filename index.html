@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Surveyors</title>
+    <link rel="stylesheet" href="Survey.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--map trail start-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!--map trail end-->
+</head>
+<body>
+    <div class="Header">
+        <div id="Header1" class="Header1">
+            <i id="phone" class="fa fa-phone"></i>
+            <i id="mail" class="fa fa-envelope-square"></i>
+            <strong class="jd" id="jd">jd</strong>
+            <i id="location" class="fa fa-map-marker"></i>
+            <strong class="hyd" id="hyd">Hyderabad</strong>
+        </div>
+        <div id="Header2" class="Header2">
+            <div id="fl" class="fl">
+                <span class="hamburger" onclick="toggleNav()">&#9776;</span>
+                <strong id="phoneLink" class="contactinfo" onclick="copyToClipboard('9490278099')"><i class="fa fa-phone"></i>+91-9490278099</strong>
+                <strong class="contactinfomail"><i class="fa fa-envelope-square"></i><a class="contactinfomail" href="mailto:pkrupavara@gmail.com?subject=Hello&body=this is test mail">pkrupavara@gmail.com</a></strong>
+                <strong class="mainhead">Land Surveyors</strong>
+                <strong class="login">Login</strong>
+                <strong class="signup">|</strong>
+                <strong class="signup">Signup</strong>
+            </div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav" style="width: 0;">
+        <a href="#Main">Home</a>
+        <a href="#servicessection">Services</a>
+        <a href="#aboutsection">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testmonials">Testmonials</a>
+        <a href="#contactsection">Contact</a>
+    </div>
+    <div id="Main" class="Main">
+        <div id="homesection" class="homesection">
+            <p class="imageinfo">Experience of 40,945 sites</p>
+            <p class="imageinfosl">Celebrating 20Years</p>
+            <div class="imageinfobutton">
+                <button class="enquire">Enquire Now</button>
+            </div>
+        </div>
+        <!--modal dialog starts -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Request Service</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="serviceform" class="serviceform" action="https://formspree.io/f/mnnpnlry"
+                    method="POST" autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="mobile" name="mobile" required placeholder="Enter your Mobile Number">
+                        </div>
+                        <div class="form-group">
+                            <span>
+                                <input type="checkbox" id="Service1" name="Service1" value="Selected">
+                                <label id="Service1">Service1</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="Service2" name="Service2" value="Selected">
+                                <label id="Service2">Service2</label>
+                            </span>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--modal dialog ends-->
+        <section id="servicessection" class="servicessection">
+            <h2>Services</h2>
+            <div class="SS">
+                <div class="row">
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service1">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service2">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service3">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service4">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service5">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service6">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service7">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-4 col-lg-3 card-class">
+                        <div class="card" style="width: 18rem;">
+                            <img src="home.png" class="card-img-top" alt="Service8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Request Service</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>
+            <img src="clients.png" alt="clients" class="clients">
+        </div>
+        <div id="aboutsection" class="aboutsection">
+            <h2>About US</h2>
+        </div>
+        <div id="gallery" class="gallery">
+            <h2>Gallery</h2>
+        </div>
+        <div id="testmonials" class="testmonials">
+            <h2>Testmonials</h2>
+            <!--Testmonials Caraousel Start-->
+            <div id="carouselExampleAutoplaying" class="carousel slide caraousel-test" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="t3.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="t1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="t2.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <!--Testmonials Caraousel end-->
+        </div>
+        <section id="contactsection" class="contactsection">
+            <h2>Contact Us</h2>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnnpnlry"
+            method="POST" autocomplete="off">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number" pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group">
+                    <label for="Message">Message:</label>
+                    <textarea id="Message" name="Message" rows="4" cols="50" placeholder="Service Request"></textarea>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <!--Demo  on maps and contact form-->
+        <div class="cs">
+            <div class="row">
+                <div class="col col-12 col-lg-6">
+                    <div>
+                        <h2 style="text-align: center;">Office Location</h2>
+                        <div id="map">
+                            <!-- Get Directions Button -->
+                            <button class="custom-btn directions" onclick="getDirections()">📍 Get Directions</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-12 col-lg-6">
+                    <section id="contactsection" class="contactsection">
+                        <h2>Contact Us</h2>
+                        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnnpnlry"
+                        method="POST" autocomplete="off">
+                            <div class="form-group">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number:</label>
+                                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number" pattern="[0-9]{10}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="Message">Message:</label>
+                                <textarea id="Message" name="Message" rows="4" cols="50" placeholder="Service Request"></textarea>
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="SideNav" class="SideNav">
+
+    </div>
+    <footer>
+        <p>© 2024 Land Surveyors. All Rights Reserved.</p>
+    </footer>
+    <script src="Survey.js"></script>
+</body>
+</html>

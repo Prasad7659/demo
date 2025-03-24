@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+}
+.Header{
+    position: fixed;
+    width:100%;
+    z-index: 1;
+}
+.Header1{
+    background-color: blue;
+    height: 30px;
+    align-content: center;
+}
+.Header2{
+    background-color: #0b0651;
+    height: 50px;
+    align-content: center;
+}
+@media (max-width: 800px){
+    .Header{
+        flex-direction: column;
+        padding: 10vw;
+    }
+    .Header1{
+        display: none;
+    }
+}
+#phone{
+    color: white;
+    padding-left: 3%;
+    cursor: pointer;
+}
+#mail{
+    color: white;
+    padding-left: 0.5%;
+    cursor: pointer;
+}
+.jd{
+    color: white;
+    padding-left: 0.5%;
+    cursor: pointer;
+}
+#location{
+    color: white;
+    padding-left: 80%;
+}
+.hyd{
+    color: white;
+}
+.hamburger{
+    color: goldenrod;
+    padding-left: 3%;
+    padding-top: 0.5%;
+    cursor: pointer;
+}
+.hamburger:hover{
+    font-size: large;
+}
+.contactinfo{
+    color: goldenrod;
+    padding-left: 1%;
+    padding-top: 0.5%;
+    cursor: pointer;
+}
+.contactinfomail{
+    color: goldenrod;
+    padding-top: 0.5%;
+    padding-left: 3px;
+    cursor: pointer;
+}
+.mainhead{
+    font-size: 30px;
+    color:goldenrod;
+    padding-left: 17%;
+}
+.login{
+    color: goldenrod;
+    padding-left: 26%;
+}
+.signup{
+    color: goldenrod;
+}
+.Main{
+
+    padding-top: 6%;
+    padding-left: 1%;
+    width: 1410px;
+}
+.homesection{
+    padding-top: 1%;
+    left: 1%;
+    background-image: url(home.png);
+    background-repeat: no-repeat;
+    padding: 2px;
+    height: 400px;
+    border-radius: 10px;
+}
+.imageinfo{
+    padding-top: 10%;
+    padding-left: 12%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: black;
+}
+.imageinfosl{
+    padding-top: 0.25%;
+    padding-left: 12%;
+    font-size: 20;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: black;
+}
+.imageinfobutton{
+    padding-left: 12%;
+    padding-top: 1%;
+}
+.enquire{
+    background-color: rgb(185, 144, 64);
+    text-align: center;
+    width: 130px;
+    border-radius: 10px;
+    height: 40px;
+    border-color: transparent;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.servicessection h2{
+    padding-top: 1%;
+    text-align: center;
+}
+.clients{
+    padding-left: 1%;
+    width: 1410px;
+    height: 500px;
+    border-radius: 2%;
+
+}
+.aboutsection h2{
+    text-align: center;
+}
+.gallery h2{
+    text-align: center;
+}
+.testmonials h2{
+    text-align: center;
+}
+.contactus h2{
+    text-align: center;
+}
+.servicecontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+}
+.service_card {
+    flex: 1;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 0; 
+    margin: 10px;
+}
+
+.service_card h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.service_card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .servicescontainer {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .service_card {
+        margin-bottom: 15px;
+    }
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: #c9f0fa;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 10px;
+    z-index: 1;
+}
+.caraousel-test{
+    z-index: 0;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    font-size: x-large;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+}
+.contactsection {
+    padding: 20px;
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* to set form to center*/
+}
+.contactsection h2{
+    text-align: center;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0 0 0;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button, adjust color as needed */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+.SS{
+    border: solid 2px black;
+    padding: 0 10px 10px 42px;
+    margin: 0 0 0 10px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+.card-class{
+    padding: 10px 0 0 0;
+}
+#map { height: 568px; border: solid black 1px;}
+.custom-btn {
+    position: absolute;
+    background: white;
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
+    z-index: 1000;
+    color: black;
+}
+.directions { top: 90%; left: 81%; }
